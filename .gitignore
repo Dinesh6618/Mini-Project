@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local student data must never be committed
+data/*.db
+data/uploads/
+*.sqlite
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

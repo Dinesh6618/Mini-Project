@@ -1,0 +1,15 @@
+[theme]
+base = "dark"
+primaryColor = "#1fa595"
+backgroundColor = "#0b1220"
+secondaryBackgroundColor = "#111c2d"
+textColor = "#e6edf5"
+font = "sans serif"
+
+[client]
+# Hides the "Deploy" button so the app looks clean during a demonstration.
+toolbarMode = "minimal"
+
+[browser]
+# Student data stays local; do not send usage statistics.
+gatherUsageStats = false

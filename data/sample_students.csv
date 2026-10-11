@@ -1,0 +1,304 @@
+student_id,student_name,department,year,section,attendance_percentage,internal_marks,assignment_score,previous_semester_marks,statistics_marks,programming_marks,communication_marks,final_result
+STU0001,Aditi Iyer,Information Technology,3,C,100.0,84.0,97.0,67.0,85.0,96.0,97.0,Pass
+STU0002,Ananya Bose,Artificial Intelligence and Data Science,2,C,97.3,99.0,100.0,85.0,100.0,100.0,100.0,Pass
+STU0003,Gayathri Singh,Artificial Intelligence and Data Science,3,C,79.9,87.0,80.0,88.0,91.0,87.0,100.0,Pass
+STU0004,Harini Sharma,Information Technology,1,B,78.9,47.0,63.0,50.0,49.0,47.0,51.0,Pass
+STU0005,Arjun Kumar,Artificial Intelligence and Data Science,3,A,71.7,35.0,34.0,49.0,37.0,36.0,43.0,Fail
+STU0006,Arjun Naidu,Electronics,3,C,77.7,46.0,67.0,69.0,48.0,45.0,31.0,Pass
+STU0007,Varun Bose,Information Technology,3,C,86.9,69.0,69.0,57.0,75.0,54.0,76.0,Pass
+STU0008,Deepak Shetty,Artificial Intelligence and Data Science,3,C,77.3,68.0,71.0,63.0,70.0,77.0,64.0,Pass
+STU0009,Ishaan Patel,Computer Science,1,A,88.6,86.0,89.0,80.0,77.0,69.0,82.0,Pass
+STU0010,Ananya Bose,Artificial Intelligence and Data Science,2,B,88.2,73.0,72.0,69.0,64.0,71.0,87.0,Pass
+STU0011,Sneha Sharma,Computer Science ,2,C,87.5,75.0,78.0,64.0,70.0,87.0,90.0,Pass
+STU0012,Lakshmi Khan,Electronics,1,A,77.0,60.0,58.0,52.0,59.0,66.0,65.0,Pass
+STU0013,Vidya Rao,Electronics,2,B,78.3,35.0,46.0,65.0,36.0,30.0,39.0,Pass
+STU0014,Farhan Chandra,Information Technology,1,B,76.8,73.0,90.0,83.0,56.0,87.0,85.0,Pass
+STU0015,Vikram Gupta,Artificial Intelligence and Data Science,3,C,83.8,56.0,70.0,74.0,55.0,68.0,52.0,Pass
+STU0016,Sahana Chandra,Computer Science,3,B,90.6,80.0,77.0,73.0,83.0,75.0,100.0,Pass
+STU0017,Kavya Joshi,Artificial Intelligence and Data Science,2,C,62.9,55.0,52.0,48.0,61.0,56.0,49.0,
+STU0018,Ananya Naidu,Artificial Intelligence and Data Science,2,C,69.9,56.0,69.0,58.0,54.0,57.0,58.0,Pass
+STU0019,Farhan Pillai,Computer Science,2,C,82.9,50.0,60.0,56.0,47.0,49.0,43.0,Fail
+STU0020,Rahul Menon,Information Technology,2,A,78.5,48.0,64.0,50.0,51.0,48.0,50.0,Fail
+STU0021,Aarav Naidu,Computer Science,1,B,90.1,68.0,82.0,73.0,75.0,70.0,91.0,Pass
+STU0022,Nisha Bose,Computer Science,1,B,67.7,35.0,73.0,32.0,41.0,48.0,44.0,Pass
+STU0023,Ananya Das,Electronics,2,B,80.5,68.0,80.0,62.0,68.0,70.0,76.0,Pass
+STU0024,Naveen Joshi,Artificial Intelligence and Data Science,2,A,72.2,63.0,49.0,57.0,65.0,78.0,81.0,Fail
+STU0025,Nisha Kumar,Information Technology,1,C,74.4,51.0,66.0,60.0,54.0,48.0,43.0,Pass
+STU0026,Vidya Menon,Information Technology,1,B,80.7,64.0,46.0,64.0,60.0,63.0,69.0,Fail
+STU0027,Jaya Chandra,Information Technology,1,C,72.8,59.0,67.0,62.0,50.0,76.0,55.0,Fail
+STU0028,Riya Chandra,Computer Science,2,C,85.4,77.0,87.0,68.0,70.0,63.0,61.0,FAIL
+STU0029,Sneha Singh,Information Technology,1,A,86.2,58.0,69.0,52.0,60.0,54.0,70.0,Pass
+STU0030,Tanvi Bose,Information Technology,2,B,81.6,69.0,75.0,62.0,73.0,65.0,91.0,Fail
+STU0031,Jaya Naidu,Computer Science,1,B,57.2,63.0,64.0,59.0,53.0,67.0,70.0,Fail
+STU0032,Ananya Menon,Artificial Intelligence and Data Science,2,B,85.6,64.0,82.0,73.0,71.0,69.0,56.0,Pass
+STU0033,Kavya Patel,Artificial Intelligence and Data Science,2,B,73.1,61.0,65.0,69.0,63.0,52.0,77.0,Fail
+STU0034,Rohan Rao,Information Technology,3,B,93.2,92.0,80.0,81.0,90.0,95.0,87.0,
+STU0035,Riya Iyer,Artificial Intelligence and Data Science,2,A,68.8,53.0,45.0,62.0,49.0,42.0,63.0,Fail
+STU0036,Pooja Rao,Information Technology,1,B,72.5,72.0,86.0,86.0,71.0,59.0,81.0,Pass
+STU0037,Ananya Sharma,Electronics,3,C,83.7,58.0,66.0,34.0,51.0,62.0,60.0,Pass
+STU0038,Shreya Bose,Artificial Intelligence and Data Science,1,C,55.7,65.0,50.0,45.0,75.0,79.0,78.0,Fail
+STU0039,Manoj Nair,Artificial Intelligence and Data Science,2,A,66.8,74.0,83.0,88.0,63.0,80.0,77.0,Pass
+STU0040,Vikram Rao,Information Technology,1,C,79.2,50.0,55.0,63.0,50.0,46.0,58.0,Pass
+STU0041,Naveen Singh,Electronics,1,A,78.1,60.0,57.0,55.0,54.0,56.0,83.0,Fail
+STU0042,Deepak Das,Information Technology,2,C,68.4,55.0,36.0,52.0,60.0,57.0,49.0,Fail
+STU0043,Tanvi Naidu,Information Technology,1,C,65.6,31.0,52.0,45.0,17.0,16.0,30.0,Fail
+STU0044,Jaya Singh,Artificial Intelligence and Data Science,2,A,82.2,69.0,72.0,78.0,63.0,67.0,66.0,Pass
+STU0045,Meera Joshi,Artificial Intelligence and Data Science,1,B,76.4,43.0,66.0,42.0,38.0,38.0,45.0,Fail
+STU0046,Aarav Patel,Information Technology,2,C,91.0,64.0,85.0,68.0,73.0,67.0,63.0,Pass
+STU0047,Akash Chandra,Information Technology,2,C,89.9,87.0,93.0,90.0,92.0,92.0,100.0,Pass
+STU0048,Sahana Pillai,Artificial Intelligence and Data Science,2,B,76.9,69.0,70.0,63.0,73.0,58.0,63.0,Pass
+STU0049,Sanjay Chandra,Artificial Intelligence and Data Science,3,B,68.8,49.0,48.0,52.0,42.0,53.0,59.0,Fail
+STU0050,Suresh Menon,Artificial Intelligence and Data Science,2,C,89.7,70.0,68.0,50.0,80.0,64.0,80.0,
+STU0051,Deepak Gupta,Artificial Intelligence and Data Science,2, B,66.8,56.0,82.0,80.0,51.0,45.0,64.0,Pass
+STU0052,Vidya Joshi,Information Technology,2,A,68.9,54.0,67.0,60.0,55.0,57.0,49.0,Fail
+STU0053,Aarav Naidu,Computer Science,2,A,88.7,55.0,64.0,57.0,59.0,58.0,66.0,
+STU0054,Sneha Reddy,Computer Science,1,B,84.2,59.0,75.0,76.0,57.0,59.0,61.0,Pass
+STU0055,Vikram Das,Artificial Intelligence and Data Science,3,C,79.9,74.0,97.0,72.0,71.0,79.0,88.0,Pass
+STU0056,Suresh Chandra,Information Technology,2,C,86.9,78.0,82.0,82.0,78.0,85.0,86.0,Pass
+STU0057,Nisha Verma,Computer Science,3,B,88.2,45.0,69.0,46.0,28.0,51.0,55.0,Fail
+STU0058,Manoj Nair,Artificial Intelligence and Data Science,1,C,79.3,54.0,55.0,66.0,62.0,58.0,54.0,Pass
+STU0059,Suresh Nair,Information Technology,1,A,77.4,84.0,66.0,65.0,80.0,77.0,88.0,Pass
+STU0060,Pranav Singh,Computer Science,2,A,75.2,64.0,80.0,53.0,59.0,52.0,77.0,Pass
+STU0061,Aditi Nair,Information Technology,1,C,91.2,67.0,48.0,54.0,80.0,53.0,70.0,Pass
+STU0062,Jaya Verma,Artificial Intelligence and Data Science,1,C,71.4,61.0,43.0,61.0,64.0,68.0,55.0,Fail
+STU0063,Suresh Rao,Information Technology,1,A,57.1,55.0,59.0,48.0,59.0,54.0,87.0,Fail
+STU0064,Zoya Verma,Artificial Intelligence and Data Science,2,A,85.4,54.0,58.0,39.0,60.0,63.0,49.0,Fail
+STU0065,Bhavna Chandra,Computer Science,2,C,76.6,59.0,52.0,61.0,69.0,62.0,62.0,Pass
+STU0066,Pranav Joshi,Information Technology,2,B,78.1,88.0,73.0,67.0,80.0,84.0,81.0,Pass
+STU0067,Shreya Verma,Information Technology,2,A,75.3,53.0,,54.0,70.0,50.0,39.0,Pass
+STU0068,Pranav Kumar,Artificial Intelligence and Data Science,1,C,91.4,77.0,85.0,85.0,80.0,81.0,73.0,Pass
+STU0069,Harini Rao,Information Technology,2,B,77.8,69.0,74.0,73.0,60.0,68.0,77.0,Fail
+STU0070,Sneha Shetty,Computer Science,2,B,,67.0,52.0,69.0,68.0,68.0,83.0,Fail
+STU0071,Naveen Iyer,Information Technology,3,C,62.0,44.0,65.0,34.0,54.0,55.0,64.0,Fail
+STU0072,Sneha Joshi,Electronics,2,C,79.3,70.0,47.0,55.0,64.0,61.0,78.0,Pass
+STU0073,Aditi Sharma,Computer Science,2,A,93.6,98.0,100.0,91.0,99.0,100.0,100.0,Pass
+STU0074,Vidya Patel,Computer Science,1,A,63.9,55.0,89.0,64.0,50.0,58.0,45.0,Pass
+STU0075,Vikram Chandra,Artificial Intelligence and Data Science,1,B,84.2,84.0,68.0,70.0,67.0,85.0,80.0,Pass
+STU0076,Farhan Nair,Information Technology,2,C,90.1,59.0,89.0,64.0,54.0,63.0,79.0,Pass
+STU0077,Tanvi Nair,Information Technology,1,C,63.7,54.0,59.0,86.0,47.0,37.0,65.0,Pass
+STU0078,Rohan Menon,Artificial Intelligence and Data Science,3,C,87.1,65.0,57.0,53.0,59.0,71.0,65.0,Pass
+STU0079,Sahana Iyer,Computer Science,1,C,71.7,46.0,78.0,53.0,54.0,47.0,45.0,Fail
+STU0080,Yash Joshi,Artificial Intelligence and Data Science,3,B,74.1,55.0,71.0,53.0,54.0,58.0,63.0,Fail
+STU0081,Deepak Das,Computer Science,1,B,73.4,62.0,74.0,63.0,68.0,75.0,71.0,Pass
+STU0082,Manoj Iyer,Artificial Intelligence and Data Science,3,A,91.9,83.0,89.0,77.0,88.0,,100.0,Pass
+STU0083,Sanjay Khan,Computer Science,2,C,84.7,83.0,58.0,63.0,79.0,84.0,87.0,Pass
+STU0084,Riya Sharma,Artificial Intelligence and Data Science,3,A,93.1,72.0,70.0,61.0,68.0,70.0,79.0,Pass
+STU0085,Sahana Mehta,Artificial Intelligence and Data Science,2,C,86.9,60.0,72.0,63.0,53.0,47.0,63.0,Fail
+STU0086,Suresh Pillai,Computer Science,2,A,81.2,83.0,90.0,98.0,91.0,73.0,94.0,Pass
+STU0087,Gayathri Gupta,Electronics,3,C,78.8,52.0,47.0,38.0,41.0,45.0,63.0,Fail
+STU0088,Gayathri Das,Information Technology,2,B,77.6,51.0,73.0,55.0,41.0,51.0,49.0,Pass
+STU0089,Jaya Bose,Artificial Intelligence and Data Science,1,C,100.0,86.0,91.0,80.0,88.0,86.0,98.0,Pass
+STU0090,Pooja Khan,Artificial Intelligence and Data Science,1,B,75.7,70.0,79.0,63.0,67.0,73.0,56.0,Pass
+STU0091,Kavya Reddy,Artificial Intelligence and Data Science,3,A,79.0,51.0,71.0,64.0,63.0,57.0,56.0,Fail
+STU0092,Rahul Gupta,Computer Science,1,B,74.4,60.0,52.0,55.0,53.0,67.0,58.0,Pass
+STU0093,Sahana Khan,Information Technology,1,C,98.2,67.0,69.0,59.0,66.0,66.0,56.0,Pass
+STU0094,Rohan Rao,Computer Science,2,A,70.1,70.0,63.0,60.0,70.0,77.0,64.0,Pass
+STU0095,Sanjay Singh,Electronics,2,A,74.9,36.0,45.0,43.0,27.0,32.0,29.0,Fail
+STU0096,Rohan Nair,Artificial Intelligence and Data Science,1,B,71.9,43.0,43.0,65.0,42.0,42.0,43.0,pass
+STU0097,Bhavna Menon,Information Technology,2,B,82.6,64.0,77.0,75.0,65.0,56.0,69.0,Pass
+STU0098,Akash Sharma,Computer Science,2,A,97.1,99.0,100.0,86.0,97.0,100.0,96.0,Pass
+STU0099,Manoj Shetty,Electronics,1,A,81.1,67.0,76.0,69.0,63.0,72.0,73.0,Pass
+STU0100,Sneha Reddy,Artificial Intelligence and Data Science,3,B,71.5,56.0,80.0,63.0,69.0,66.0,70.0,Pass
+STU0101,Varun Rao,Electronics,2,A,87.5,60.0,53.0,59.0,58.0,56.0,56.0,Pass
+STU0102,Shreya Sharma,Artificial Intelligence and Data Science,3,B,77.5,60.0,81.0,60.0,55.0,64.0,53.0,Pass
+STU0103,Rohan Iyer,Artificial Intelligence and Data Science,1,A,72.1,12.0,42.0,42.0,13.0,7.0,34.0,Fail
+STU0104,Vikram Singh,Electronics,3,C,77.8,64.0,75.0,57.0,70.0,58.0,68.0,FAIL
+STU0105,Bhavna Menon,Artificial Intelligence and Data Science,3,B,66.0,45.0,64.0,64.0,38.0,48.0,44.0,Pass
+STU0106,Sneha Menon,Computer Science,2,A,78.6,56.0,53.0,60.0,48.0,53.0,54.0,
+STU0107,Harini Rao,Computer Science,2,C,100.0,100.0,99.0,82.0,100.0,100.0,100.0,Pass
+STU0108,Tanvi Pillai,Information Technology,3,C,79.4,22.0,39.0,38.0,21.0,17.0,40.0,Fail
+STU0109,Rahul Reddy,Artificial Intelligence and Data Science,3,C,77.7,56.0,64.0,72.0,67.0,42.0,68.0,Pass
+STU0110,Lakshmi Mehta,Artificial Intelligence and Data Science,2,C,87.2,53.0,82.0,81.0,64.0,57.0,60.0,Pass
+STU0111,Ananya Kumar,Electronics,3,C,93.3,70.0,69.0,73.0,67.0,74.0,72.0,Pass
+STU0112,Rohan Menon,Information Technology,3,A,68.9,32.0,50.0,41.0,29.0,26.0,28.0,Fail
+STU0113,Sanjay Bose,Computer Science,3,C,91.7,43.0,77.0,56.0,42.0,56.0,37.0,Pass
+STU0114,Pooja Joshi,Information Technology,1,B,88.3,41.0,56.0,55.0,42.0,48.0,50.0,Pass
+STU0115,Rahul Reddy,Computer Science,3,A,69.6,65.0,65.0,77.0,70.0,79.0,66.0,Pass
+STU0116,Deepak Sharma,Information Technology,1,C,97.8,57.0,76.0,69.0,57.0,60.0,64.0,Fail
+STU0117,Farhan Naidu,Information Technology,2,A,74.0,64.0,51.0,66.0,69.0,55.0,76.0,Fail
+STU0118,Divya Das,Artificial Intelligence and Data Science,2,A,71.3,51.0,43.0,66.0,53.0,56.0,67.0,Fail
+STU0119,Pooja Rao,Artificial Intelligence and Data Science,2,A,88.7,51.0,86.0,70.0,37.0,50.0,50.0,Pass
+STU0120,Rahul Verma,Computer Science,2,C,81.3,75.0,83.0,65.0,66.0,77.0,66.0,Pass
+STU0121,Sneha Chandra,Artificial Intelligence and Data Science,3,A,76.9,70.0,79.0,62.0,80.0,74.0,87.0,Pass
+STU0122,Ishaan Khan,Artificial Intelligence and Data Science,2,B,73.7,61.0,75.0,58.0,64.0,62.0,55.0,Pass
+STU0123,Nisha Pillai,Computer Science,2,A,74.6,31.0,43.0,33.0,24.0,30.0,34.0,Fail
+STU0124,Sneha Patel,Information Technology,3,C,72.5,34.0,33.0,60.0,49.0,28.0,36.0,Fail
+STU0125,Sahana Bose,Computer Science,1,B,83.5,74.0,74.0,69.0,83.0,84.0,86.0,Pass
+STU0126,Kavya Iyer,Artificial Intelligence and Data Science,3,A,77.9,43.0,69.0,58.0,33.0,54.0,55.0,Fail
+STU0127,Aarav Nair,Computer Science,1,C,75.1,64.0,54.0,40.0,64.0,66.0,75.0,Pass
+STU0128,Bhavna Rao,Artificial Intelligence and Data Science,1,B,94.6,60.0,80.0,63.0,62.0,61.0,61.0,Pass
+STU0129,Yash Joshi,Artificial Intelligence and Data Science,1,C,83.7,58.0,75.0,62.0,56.0,59.0,61.0,
+STU0130,Deepak Patel,Computer Science,3,A,77.8,71.0,72.0,76.0,65.0,71.0,81.0,Pass
+STU0131,Gayathri Singh,Information Technology,1,A,79.9,66.0,66.0,63.0,71.0,50.0,64.0,Pass
+STU0132,Sneha Menon,Information Technology,2,A,67.7,56.0,51.0,67.0,55.0,54.0,63.0,Fail
+STU0133,Karthik Patel,Computer Science,2,C,65.2,59.0,61.0,58.0,58.0,70.0,64.0,Pass
+STU0134,Suresh Reddy,Information Technology,1,B,63.8,22.0,36.0,13.0,34.0,25.0,31.0,Fail
+STU0135,Jaya Gupta,Electronics,3,B,82.7,47.0,72.0,44.0,46.0,57.0,42.0,Fail
+STU0136,Divya Mehta,Computer Science,3,C,86.4,73.0,,58.0,65.0,71.0,69.0,Pass
+STU0137,Yash Mehta,Electronics,3,A,62.7,27.0,29.0,39.0,27.0,14.0,35.0,Fail
+STU0138,Karthik Mehta,Computer Science,2,A,69.6,52.0,60.0,41.0,57.0,58.0,46.0,Fail
+STU0139,Nisha Joshi,Computer Science,1,B,74.0,64.0,74.0,65.0,73.0,75.0,65.0,Pass
+STU0140,Akash Gupta,Artificial Intelligence and Data Science,2,A,96.1,70.0,84.0,83.0,73.0,76.0,67.0,FAIL
+STU0141,Ishaan Sharma,Information Technology,3,B,85.5,64.0,54.0,76.0,53.0,47.0,61.0,Pass
+STU0142,Shreya Chandra,Electronics,3,A,88.5,89.0,100.0,84.0,82.0,88.0,85.0,Pass
+STU0143,Suresh Shetty,Computer Science,2,B,100.0,87.0,83.0,91.0,83.0,94.0,94.0,Pass
+STU0144,Akash Kumar,Computer Science,2,C,73.8,53.0,50.0,42.0,48.0,43.0,56.0,Pass
+STU0145,Harini Patel,Computer Science,2,B,84.7,59.0,64.0,63.0,63.0,57.0,70.0,Fail
+STU0146,Shreya Reddy,Artificial Intelligence and Data Science,2,C,69.0,60.0,65.0,59.0,54.0,54.0,64.0,Pass
+STU0147,Meera Sharma,Computer Science,2,B,81.4,55.0,64.0,64.0,62.0,67.0,60.0,Fail
+STU0148,Varun Mehta,Artificial Intelligence and Data Science,1,B,75.7,63.0,62.0,73.0,72.0,54.0,82.0,Pass
+STU0149,Pooja Kumar,Computer Science,1,C,70.5,65.0,59.0,76.0,65.0,70.0,81.0,Pass
+STU0150,Ananya Sharma,Electronics,1,C,84.8,88.0,78.0,79.0,78.0,72.0,89.0,Pass
+STU0151,Vidya Gupta,Computer Science,1,C,84.6,29.0,51.0,43.0,34.0,27.0,32.0,Pass
+STU0152,Akash Kumar,Electronics,1,A,79.5,85.0,71.0,66.0,88.0,97.0,98.0,Pass
+STU0153,Yash Pillai,Information Technology,3,C,56.7,47.0,57.0,52.0,45.0,36.0,34.0,Fail
+STU0154,Sneha Das,Information Technology,3,C,86.5,75.0,83.0,78.0,72.0,85.0,76.0,Pass
+STU0155,Shreya Pillai,Electronics,3,C,93.9,63.0,89.0,64.0,60.0,71.0,62.0,Pass
+STU0156,Ishaan Sharma,Artificial Intelligence and Data Science,2,B,69.5,63.0,62.0,69.0,58.0,67.0,55.0,Pass
+STU0157,Akash Rao,Artificial Intelligence and Data Science,2,C,92.4,99.0,100.0,71.0,96.0,100.0,100.0,Pass
+STU0158,Farhan Patel,Electronics,2,B,98.3,66.0,82.0,89.0,71.0,68.0,54.0,Pass
+STU0159,Rohan Mehta,Artificial Intelligence and Data Science,2,C,74.4,63.0,62.0,62.0,59.0,67.0,87.0,Pass
+STU0160,Ananya Menon,Computer Science,3,B,79.2,59.0,69.0,82.0,68.0,51.0,61.0,Pass
+STU0161,Meera Iyer,Computer Science,1,B,88.0,97.0,99.0,100.0,88.0,93.0,100.0,Pass
+STU0162,Vidya Kumar,Computer Science,2,A,95.2,85.0,77.0,94.0,95.0,90.0,75.0,Pass
+STU0163,Jaya Chandra,Artificial Intelligence and Data Science,2,B,77.8,63.0,85.0,74.0,68.0,52.0,68.0,Pass
+STU0164,Deepak Kumar,Computer Science,3,C,88.6,51.0,71.0,70.0,53.0,56.0,72.0,Pass
+STU0165,Bhavna Das,Artificial Intelligence and Data Science,2,A,89.8,69.0,84.0,61.0,66.0,81.0,70.0,Pass
+STU0166,Vidya Patel,Information Technology,2,C,93.3,72.0,68.0,66.0,64.0,68.0,83.0,
+STU0167,Sahana Patel,Computer Science,1,B,64.9,29.0,59.0,44.0,37.0,24.0,41.0,Fail
+STU0168,Zoya Mehta,Information Technology,2,C,79.2,72.0,65.0,58.0,71.0,77.0,51.0,Pass
+STU0169,Suresh Das,Artificial Intelligence and Data Science,1,A,85.2,73.0,62.0,61.0,65.0,79.0,72.0,Pass
+STU0170,Arjun Joshi,Artificial Intelligence and Data Science,3,B,69.5,37.0,61.0,57.0,39.0,27.0,37.0,Pass
+STU0171,Aarav Verma,Computer Science,1,A,84.7,44.0,62.0,46.0,36.0,43.0,41.0,pass
+STU0172,Akash Bose,Artificial Intelligence and Data Science,3,A,67.1,53.0,64.0,68.0,55.0,57.0,43.0,Pass
+STU0173,Arjun Pillai,Electronics,2,B,65.3,69.0,80.0,67.0,70.0,70.0,65.0,Pass
+STU0174,Pooja Verma,Information Technology,3,B,96.9,87.0,100.0,82.0,100.0,92.0,75.0,
+STU0175,Bhavna Rao,Computer Science,2,C,83.6,73.0,64.0,51.0,54.0,75.0,78.0,Pass
+STU0176,Naveen Mehta,Computer Science,3,C,72.7,25.0,46.0,43.0,29.0,28.0,32.0,Pass
+STU0177,Nisha Singh,Artificial Intelligence and Data Science ,1,A,77.1,88.0,54.0,76.0,86.0,88.0,99.0,Pass
+STU0178,Kavya Singh,Artificial Intelligence and Data Science,2,B,85.1,63.0,66.0,81.0,64.0,75.0,63.0,Pass
+STU0179,Sanjay Chandra,Information Technology,3,C,78.2,33.0,43.0,40.0,34.0,32.0,28.0,Fail
+STU0180,Akash Khan,Electronics,2,A,63.0,40.0,26.0,31.0,40.0,43.0,54.0,Fail
+STU0181,Jaya Menon,Computer Science,3,C,77.7,43.0,42.0,55.0,43.0,,45.0,
+STU0182,Bhavna Bose,Computer Science,1,B,89.7,63.0,75.0,68.0,64.0,64.0,69.0,Pass
+STU0183,Riya Iyer,Information Technology,1,A,64.0,45.0,,49.0,40.0,37.0,57.0,Pass
+STU0184,Manoj Sharma,Computer Science,3,C,94.9,52.0,53.0,77.0,43.0,53.0,47.0,
+STU0185,Bhavna Chandra,Computer Science,1,B,76.1,63.0,73.0,,54.0,72.0,67.0,Pass
+STU0186,Manoj Menon,Electronics,3,C,87.2,64.0,71.0,67.0,67.0,62.0,76.0,Pass
+STU0187,Rohan Patel,Computer Science,2,C,83.7,68.0,79.0,81.0,73.0,64.0,72.0,Pass
+STU0188,Lakshmi Khan,Artificial Intelligence and Data Science,2,B,94.5,63.0,88.0,64.0,65.0,56.0,65.0,Pass
+STU0189,Nisha Kumar,Information Technology,1,B,,56.0,68.0,58.0,50.0,47.0,69.0,Pass
+STU0190,Ananya Kumar,Computer Science,3,A,69.6,84.0,,81.0,93.0,79.0,79.0,Pass
+STU0191,Ishaan Sharma,Computer Science,3,A,69.8,30.0,38.0,43.0,25.0,26.0,25.0,Fail
+STU0192,Gayathri Das,Artificial Intelligence and Data Science,1,A,91.8,68.0,83.0,60.0,62.0,71.0,73.0,Pass
+STU0193,Kavya Pillai,Information Technology,1,B,76.2,-6.0,61.0,49.0,39.0,44.0,37.0,Pass
+STU0194,Karthik Chandra,Information Technology,1,A,82.3,73.0,77.0,47.0,76.0,62.0,75.0,Pass
+STU0195,Vikram Joshi,Information Technology,1,B,89.9,53.0,48.0,45.0,39.0,64.0,51.0,Pass
+STU0196,Divya Gupta,Electronics,1,A,68.8,51.0,52.0,42.0,43.0,46.0,51.0,Fail
+STU0197,Sneha Shetty,Information Technology,3,B,75.3,50.0,64.0,48.0,62.0,55.0,60.0,Fail
+STU0198,Arjun Naidu,Artificial Intelligence and Data Science,1,A,59.4,44.0,48.0,44.0,38.0,32.0,51.0,Fail
+STU0199,Farhan Menon,Artificial Intelligence and Data Science,1,B,91.4,56.0,87.0,60.0,48.0,46.0,56.0,Pass
+STU0200,Yash Iyer,Computer Science,1,A,84.9,57.0,69.0,50.0,49.0,65.0,58.0,Fail
+STU0201,Divya Gupta,Computer Science,3,A,68.1,46.0,52.0,49.0,34.0,50.0,49.0,Fail
+STU0202,Vidya Sharma,Artificial Intelligence and Data Science,2,B,81.5,54.0,48.0,49.0,54.0,55.0,57.0,Fail
+STU0203,Sahana Menon,Information Technology,1,A,85.8,57.0,77.0,52.0,54.0,66.0,57.0,Fail
+STU0204,Lakshmi Kumar,Computer Science,1,A,86.4,70.0,71.0,64.0,74.0,77.0,70.0,Pass
+STU0205,Pooja Gupta,Computer Science,2,B,77.3,65.0,absent,86.0,43.0,58.0,82.0,Pass
+STU0206,Kavya Mehta,Computer Science,3,B,95.6,56.0,56.0,54.0,61.0,47.0,59.0,Pass
+STU0207,Ishaan Bose,Information Technology,1,C,70.7,51.0,66.0,65.0,47.0,58.0,55.0,Pass
+STU0208,Lakshmi Mehta,Artificial Intelligence and Data Science,1,A,78.4,75.0,77.0,71.0,86.0,64.0,65.0,Pass
+STU0209,Aarav Naidu,Computer Science,2,A,80.4,44.0,63.0,,31.0,53.0,41.0,Fail
+STU0210,Pranav Gupta,Information Technology,1,B,96.8,50.0,87.0,55.0,51.0,52.0,68.0,Pass
+STU0211,Aarav Bose,Information Technology,3,A,91.1,56.0,74.0,63.0,50.0,54.0,76.0,Pass
+STU0212,Suresh Menon,Electronics,2,C,60.1,46.0,36.0,62.0,39.0,50.0,47.0,Fail
+STU0213,Aditi Singh,Computer Science,1,C,55.3,50.0,52.0,51.0,48.0,50.0,40.0,pass
+STU0214,Nisha Bose,Computer Science,1,B,86.7,73.0,83.0,69.0,72.0,73.0,84.0,Pass
+STU0215,Divya Patel,Artificial Intelligence and Data Science,3,C,94.2,90.0,,88.0,76.0,100.0,85.0,Pass
+STU0216,Nisha Gupta,Artificial Intelligence and Data Science,3,A,87.6,41.0,62.0,35.0,36.0,45.0,55.0,Fail
+STU0217,Ananya Pillai,Artificial Intelligence and Data Science,1,B,81.7,80.0,70.0,73.0,98.0,84.0,82.0,Pass
+STU0218,Ananya Pillai,Artificial Intelligence and Data Science,1,A,78.3,77.0,93.0,79.0,73.0,70.0,75.0,Pass
+STU0219,Pooja Bose,Information Technology,1,C,71.6,74.0,77.0,79.0,83.0,81.0,75.0,Pass
+STU0220,Manoj Reddy,Artificial Intelligence and Data Science,3,A,83.3,47.0,57.0,54.0,37.0,53.0,59.0,Fail
+STU0221,Manoj Gupta,Electronics,1,C,98.8,81.0,63.0,52.0,81.0,77.0,81.0,Pass
+STU0222,Ananya Iyer,Information Technology,3,B,80.1,52.0,50.0,62.0,67.0,49.0,46.0,pass
+STU0223,Bhavna Naidu,Computer Science,2,C,84.5,67.0,60.0,63.0,71.0,76.0,58.0,Pass
+STU0224,Tanvi Joshi,Computer Science,3,B,92.5,70.0,99.0,77.0,63.0,70.0,71.0,Pass
+STU0225,Sahana Patel,Electronics,2,B,93.7,66.0,71.0,55.0,55.0,52.0,66.0,Pass
+STU0226,Rohan Reddy,Computer Science,3,B,93.3,69.0,79.0,58.0,71.0,80.0,72.0,Pass
+STU0227,Sahana Kumar,Artificial Intelligence and Data Science ,2,A,93.5,75.0,73.0,68.0,73.0,72.0,75.0,Pass
+STU0228,Harini Mehta,Electronics,1,C,47.4,52.0,37.0,66.0,49.0,57.0,55.0,Fail
+STU0229,Ananya Singh,Artificial Intelligence and Data Science,1,A,,36.0,50.0,40.0,24.0,44.0,35.0,Fail
+STU0230,Harini Reddy,Artificial Intelligence and Data Science,1,C,92.0,79.0,84.0,68.0,87.0,85.0,92.0,Pass
+STU0231,Meera Joshi,Artificial Intelligence and Data Science,1,A,75.7,85.0,63.0,70.0,75.0,84.0,85.0,Pass
+STU0232,Jaya Chandra,Electronics,2,B,90.2,65.0,74.0,70.0,64.0,60.0,72.0,Pass
+STU0233,Sanjay Chandra,Artificial Intelligence and Data Science,2,C,76.8,68.0,64.0,62.0,67.0,79.0,73.0,Pass
+STU0234,Rahul Chandra,Information Technology,3,A,104.5,84.0,49.0,62.0,92.0,74.0,80.0,Pass
+STU0235,Shreya Iyer,Computer Science,1,A,92.5,89.0,86.0,73.0,83.0,95.0,79.0,Pass
+STU0236,Yash Bose,Computer Science,3,A,63.2,43.0,56.0,55.0,31.0,49.0,52.0,Fail
+STU0237,Bhavna Verma,Information Technology,1,A,66.1,33.0,51.0,47.0,34.0,35.0,36.0,Fail
+STU0238,Harini Iyer,Information Technology,1,C,81.6,42.0,29.0,50.0,39.0,37.0,58.0,Fail
+STU0239,Tanvi Shetty,Electronics,2,B,78.9,73.0,71.0,65.0,63.0,82.0,72.0,Fail
+STU0240,Sanjay Verma,Artificial Intelligence and Data Science,3,C,72.2,69.0,59.0,67.0,64.0,73.0,78.0,Pass
+STU0241,Gayathri Mehta,Information Technology,1,C,70.7,52.0,62.0,51.0,53.0,51.0,46.0,Pass
+STU0242,Rahul Reddy,Information Technology,2,B,65.7,34.0,67.0,53.0,39.0,38.0,34.0,Pass
+STU0243,Divya Nair,Information Technology,2,B,94.4,87.0,77.0,89.0,93.0,79.0,83.0,
+STU0244,Bhavna Sharma,Electronics,2,C,90.6,94.0,,78.0,100.0,84.0,95.0,Pass
+STU0245,Karthik Naidu,Information Technology,2,B,88.3,84.0,95.0,84.0,89.0,85.0,87.0,Pass
+STU0246,Manoj Pillai,Electronics,3,A,66.7,58.0,48.0,57.0,53.0,58.0,57.0,
+STU0247,Shreya Gupta,Information Technology,2,A,83.3,67.0,80.0,67.0,67.0,74.0,70.0,Pass
+STU0248,Rohan Rao,Information Technology,1,B,72.0,51.0,69.0,68.0,49.0,56.0,60.0,Pass
+STU0249,Shreya Verma,Information Technology,3,C,90.6,57.0,64.0,68.0,51.0,50.0,49.0,Fail
+STU0250,Sneha Rao,Information Technology,3,B,91.6,48.0,40.0,45.0,34.0,52.0,50.0,Pass
+STU0251,Ananya Rao,Information Technology,3,A,72.2,41.0,57.0,41.0,39.0,43.0,39.0,Pass
+STU0252,Karthik Iyer,Information Technology,1,C,85.9,79.0,73.0,74.0,84.0,75.0,77.0,Pass
+STU0253,Naveen Mehta,Information Technology,3,C,81.9,63.0,74.0,62.0,57.0,68.0,71.0,Fail
+STU0254,Meera Sharma,Artificial Intelligence and Data Science,3,C,75.1,60.0,75.0,50.0,65.0,63.0,64.0,Pass
+STU0255,Lakshmi Patel,Electronics,2,A,64.8,44.0,49.0,66.0,40.0,45.0,54.0,Pass
+STU0256,Pranav Pillai,Artificial Intelligence and Data Science,1,A,91.0,89.0,99.0,81.0,91.0,84.0,90.0,Pass
+STU0257,Akash Khan,Artificial Intelligence and Data Science,1,B,100.0,78.0,100.0,82.0,77.0,76.0,81.0,Pass
+STU0258,Sanjay Shetty,Artificial Intelligence and Data Science,3,A,78.3,78.0,75.0,76.0,86.0,92.0,76.0,Pass
+STU0259,Kavya Menon,Computer Science,3,A,79.5,56.0,65.0,69.0,53.0,55.0,62.0,Pass
+STU0260,Sanjay Patel,Artificial Intelligence and Data Science,1,B,78.4,48.0,57.0,54.0,68.0,42.0,51.0,Pass
+STU0261,Deepak Pillai,Computer Science,2,C,89.8,86.0,51.0,60.0,88.0,84.0,86.0,Pass
+STU0262,Bhavna Naidu,Artificial Intelligence and Data Science,1,C,71.3,50.0,65.0,62.0,41.0,50.0,60.0,Pass
+STU0263,Aditi Rao,Electronics,1,B,98.0,76.0,73.0,78.0,75.0,90.0,66.0,Pass
+STU0264,Rohan Bose,Information Technology,2,A,92.6,81.0,78.0,82.0,72.0,73.0,75.0,Pass
+STU0265,Deepak Shetty,Electronics,1,B,88.1,64.0,60.0,61.0,62.0,60.0,56.0,Pass
+STU0266,Gayathri Verma,Computer Science,3,B,88.9,87.0,80.0,63.0,83.0,98.0,90.0,Pass
+STU0267,Sahana Nair,Computer Science,2,C,83.6,70.0,64.0,59.0,81.0,75.0,72.0,Pass
+STU0268,Rohan Kumar,Artificial Intelligence and Data Science,1,C,86.7,54.0,73.0,63.0,62.0,51.0,59.0,Pass
+STU0269,Kavya Singh,Computer Science,3,C,78.1,51.0,69.0,54.0,54.0,40.0,53.0,Fail
+STU0270,Ishaan Pillai,Information Technology,3,B,76.1,48.0,42.0,55.0,45.0,43.0,51.0,Fail
+STU0271,Tanvi Bose,Computer Science,2,A,82.8,55.0,87.0,64.0,57.0,67.0,70.0,Fail
+STU0272,Gayathri Verma,Artificial Intelligence and Data Science,2,B,77.9,70.0,72.0,81.0,69.0,83.0,72.0,Pass
+STU0273,Naveen Shetty,Computer Science,1,C,85.6,57.0,44.0,55.0,73.0,56.0,59.0,Fail
+STU0274,Akash Gupta,Computer Science,1,B,72.8,46.0,59.0,56.0,50.0,53.0,43.0,Fail
+STU0275,Sneha Naidu,Information Technology,1,C,95.9,89.0,89.0,94.0,92.0,91.0,100.0,Pass
+STU0276,Suresh Rao,Computer Science,1,B,70.7,66.0,54.0,48.0,60.0,73.0,60.0,Fail
+STU0277,Lakshmi Verma,Artificial Intelligence and Data Science,3,C,84.9,66.0,83.0,65.0,61.0,63.0,69.0,Pass
+STU0278,Aarav Rao,Computer Science,3,A,64.8,57.0,69.0,55.0,50.0,62.0,55.0,Pass
+STU0279,Riya Khan,Information Technology,1,B,74.7,16.0,37.0,28.0,16.0,15.0,5.0,Fail
+STU0280,Ishaan Singh,Artificial Intelligence and Data Science,3,C,86.5,96.0,92.0,93.0,100.0,99.0,94.0,Pass
+STU0281,Harini Gupta,Information Technology,3,B,70.1,64.0,58.0,60.0,53.0,63.0,57.0,Pass
+STU0282,Gayathri Pillai,Information Technology,3,C,93.2,68.0,60.0,46.0,61.0,77.0,112.0,Pass
+STU0283,Riya Bose,Artificial Intelligence and Data Science,1,C,86.8,75.0,95.0,80.0,70.0,91.0,80.0,Pass
+STU0284,Vikram Kumar,Information Technology,2,C,86.7,96.0,92.0,92.0,100.0,87.0,100.0,Pass
+STU0285,Akash Pillai,Information Technology,2,C,70.4,46.0,58.0,55.0,53.0,,51.0,Pass
+STU0286,Aarav Naidu,Computer Science,2,B,62.5,63.0,56.0,49.0,67.0,66.0,75.0,Pass
+STU0287,Shreya Chandra,Computer Science,2,C,95.4,56.0,62.0,52.0,54.0,51.0,63.0,Pass
+STU0288,Rohan Shetty,Electronics,2,A,82.5,83.0,76.0,65.0,76.0,94.0,74.0,Pass
+STU0289,Rohan Das,Computer Science,3,B,88.2,57.0,68.0,72.0,67.0,47.0,65.0,Pass
+STU0290,Deepak Das,Computer Science,2,A,79.4,79.0,91.0,85.0,73.0,68.0,82.0,Pass
+STU0291,Vikram Mehta,Computer Science,3,A,82.9,69.0,78.0,,70.0,75.0,79.0,Pass
+STU0292,Manoj Singh,Artificial Intelligence and Data Science,2,B,79.1,48.0,68.0,59.0,51.0,42.0,53.0,Pass
+STU0293,Bhavna Iyer,Artificial Intelligence and Data Science,1, B,76.3,54.0,58.0,81.0,52.0,52.0,53.0,Pass
+STU0294,Lakshmi Naidu,Artificial Intelligence and Data Science,2,A,70.7,51.0,64.0,61.0,62.0,59.0,47.0,Pass
+STU0295,Meera Reddy,Computer Science,3,A,85.4,66.0,81.0,61.0,69.0,65.0,68.0,Pass
+STU0296,Pooja Chandra,Computer Science,2,C,,76.0,74.0,78.0,63.0,66.0,84.0,Pass
+STU0297,Manoj Rao,Computer Science,3,C,87.4,67.0,67.0,64.0,72.0,63.0,70.0,Pass
+STU0298,Gayathri Joshi,Computer Science,1,B,76.1,66.0,64.0,63.0,55.0,66.0,73.0,Pass
+STU0299,Vikram Chandra,Computer Science,1,A,85.7,58.0,85.0,55.0,48.0,44.0,65.0,Pass
+STU0011,Nisha Rao,Artificial Intelligence and Data Science,1,C,61.2,50.0,27.0,35.0,51.0,43.0,44.0,Fail
+STU0006,Arjun Naidu,Electronics,3,C,77.7,46.0,67.0,69.0,48.0,45.0,31.0,Pass
+STU0043,Tanvi Naidu,Information Technology,1,C,65.6,31.0,52.0,45.0,17.0,16.0,30.0,Fail
+STU0118,Divya Das,Artificial Intelligence and Data Science,2,A,71.3,51.0,43.0,66.0,53.0,56.0,67.0,Fail

@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = [
     "Dashboard", "Student Records", "Data Cleaning", "Exploratory Analysis",
     "Risk Prediction", "Model Evaluation", "Data Ethics", "About Project",
+    "What-If Simulator", "Semester Progress Tracker", "Model Comparison Lab",
+    "Report Generator", "Data Quality Score", "Class and Subject Comparison", "Bias and Fairness Auditor",
 ]
 
 
@@ -42,6 +44,14 @@ class AppTests(unittest.TestCase):
                 [e for e in at.error if "could not be displayed" in str(e.value)],
                 f"{page} raised a handled error",
             )
+
+    def test_dashboard_shortcuts_open_the_correct_pages(self):
+        at = new_app()
+        for destination in ["Student Records", "What-If Simulator", "Report Generator"]:
+            at.sidebar.radio(key="page").set_value("Dashboard").run()
+            at.button(key=f"go_{destination}").click().run()
+            self.assertEqual(at.session_state["page"], destination)
+            self.assertFalse(at.exception)
 
     def test_metrics_are_computed_from_data(self):
         import pandas as pd

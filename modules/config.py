@@ -21,7 +21,7 @@ REQUIRED_COLUMNS = [
     "previous_semester_marks",
 ]
 
-GROUP_COLUMNS = ["department", "year", "section"]
+GROUP_COLUMNS = ["department", "year", "section", "semester"]
 
 # Core numeric columns and the range of values that are considered valid.
 CORE_NUMERIC_RANGES = {

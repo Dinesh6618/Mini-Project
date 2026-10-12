@@ -172,7 +172,7 @@ class PredictionTests(unittest.TestCase):
         cls.trained = train_models(cls.frame)
 
     def test_both_models_and_metrics(self):
-        self.assertEqual(set(self.trained["models"]), {"Logistic Regression", "Decision Tree"})
+        self.assertEqual(set(self.trained["models"]), {"Logistic Regression", "Decision Tree", "Random Forest", "K-Nearest Neighbors"})
         for result in self.trained["results"].values():
             for key in ("accuracy", "precision", "recall", "f1"):
                 self.assertTrue(0.0 <= result["metrics"][key] <= 1.0)

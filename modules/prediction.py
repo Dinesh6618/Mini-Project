@@ -32,6 +32,10 @@ from sklearn.model_selection import StratifiedKFold, cross_val_predict, cross_va
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.inspection import permutation_importance
+from sklearn.model_selection import StratifiedGroupKFold
 
 from modules.config import (
     CV_MIN_TRAIN_ROWS,
@@ -81,7 +85,7 @@ def build_pipeline(estimator, features: list[str]) -> Pipeline:
     training data only (no information leaks from the test set).
     """
     numeric = Pipeline([
-        ("imputer", SimpleImputer(strategy="median")),
+        ("imputer", SimpleImputer(strategy="median", keep_empty_features=True)),
         ("scaler", StandardScaler()),
     ])
     preprocess = ColumnTransformer([("numeric", numeric, features)], remainder="drop")
@@ -89,8 +93,10 @@ def build_pipeline(estimator, features: list[str]) -> Pipeline:
 
 
 def candidate_models() -> dict:
-    """The two interpretable baseline models required for the project."""
+    """Four candidates evaluated using identical records and preprocessing."""
     return {
+        "Random Forest": RandomForestClassifier(n_estimators=100, max_depth=6, min_samples_leaf=3, class_weight="balanced", random_state=RANDOM_STATE),
+        "K-Nearest Neighbors": KNeighborsClassifier(n_neighbors=5),
         "Logistic Regression": LogisticRegression(
             class_weight="balanced", max_iter=1000, random_state=RANDOM_STATE
         ),
@@ -114,14 +120,17 @@ def _metrics(y_true, y_pred, y_prob) -> dict:
     return result
 
 
-def _importance_table(pipeline: Pipeline, features: list[str], name: str) -> pd.DataFrame:
+def _importance_table(pipeline: Pipeline, features: list[str], name: str, X_train=None, y_train=None) -> pd.DataFrame:
     estimator = pipeline.named_steps["model"]
     if hasattr(estimator, "coef_"):
         values = estimator.coef_[0]
         kind = "Coefficient (standardised units; positive raises estimated risk)"
-    else:
+    elif hasattr(estimator, "feature_importances_"):
         values = estimator.feature_importances_
         kind = "Impurity-based importance (0-1; direction not shown)"
+    else:
+        values = permutation_importance(pipeline, X_train, y_train, scoring="f1", n_repeats=5, random_state=RANDOM_STATE).importances_mean
+        kind = "Training-set permutation F1 decrease (global; not causal)"
     table = pd.DataFrame({"Feature": features, "Value": values, "Kind": kind})
     table["Magnitude"] = table["Value"].abs()
     return table.sort_values("Magnitude", ascending=False).reset_index(drop=True)
@@ -135,7 +144,7 @@ def train_models(
     test_size: float = TEST_SIZE,
     random_state: int = RANDOM_STATE,
 ) -> dict:
-    """Train and evaluate Logistic Regression and Decision Tree models.
+    """Train and evaluate four classifiers with a shared held-out split.
 
     Raises ``ModelTrainingError`` with a user-friendly message when the data is
     unsuitable (no labels, too few rows, or too few examples of one outcome).
@@ -176,9 +185,21 @@ def train_models(
             f"{MIN_PER_CLASS} examples of each outcome are needed."
         )
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X_all, y_all, test_size=test_size, random_state=random_state, stratify=y_all
-    )
+    groups = student_groups(frame.loc[X_all.index])
+    grouped = groups.duplicated().any()
+    if grouped:
+        if min(groups[y_all == label].nunique() for label in (0, 1)) < MIN_PER_CLASS:
+            raise ModelTrainingError("Grouped evaluation needs at least 8 independent students with each historical outcome; repeated semesters do not count as independent students.")
+        splits = list(StratifiedGroupKFold(n_splits=4, shuffle=True, random_state=random_state).split(X_all, y_all, groups))
+        valid = [(a, b) for a, b in splits if y_all.iloc[a].nunique() == 2 and y_all.iloc[b].nunique() == 2]
+        if not valid:
+            raise ModelTrainingError("Not enough independent students with both outcomes for a grouped evaluation.")
+        a, b = valid[0]
+        X_train, X_test, y_train, y_test = X_all.iloc[a], X_all.iloc[b], y_all.iloc[a], y_all.iloc[b]
+    else:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X_all, y_all, test_size=test_size, random_state=random_state, stratify=y_all
+        )
 
     models, results = {}, {}
     for name, estimator in candidate_models().items():
@@ -190,7 +211,7 @@ def train_models(
         results[name] = {
             "metrics": _metrics(y_test, predicted, probability),
             "confusion_matrix": confusion_matrix(y_test, predicted, labels=[0, 1]),
-            "importance": _importance_table(pipeline, features, name),
+            "importance": _importance_table(pipeline, features, name, X_train, y_train),
             "y_true": y_test.to_numpy(),
             "y_pred": predicted,
             "y_prob": probability,
@@ -203,6 +224,8 @@ def train_models(
     if len(X_train) >= CV_MIN_TRAIN_ROWS and min_train_class >= 5:
         folds = min(5, min_train_class)
         splitter = StratifiedKFold(n_splits=folds, shuffle=True, random_state=random_state)
+        if grouped:
+            splitter = list(StratifiedGroupKFold(n_splits=folds, shuffle=True, random_state=random_state).split(X_train, y_train, groups.loc[X_train.index]))
         for name, estimator in candidate_models().items():
             scores = cross_validate(
                 build_pipeline(estimator, features), X_train, y_train, cv=splitter,
@@ -231,7 +254,7 @@ def train_models(
     if min(n_fail, n_pass) / len(y_all) < 0.3:
         notes.append(
             f"Outcomes are imbalanced (Fail = {n_fail / len(y_all):.0%}). Class weights were "
-            "used so the minority class is not ignored, and accuracy alone is misleading."
+            "used for Logistic Regression and trees (not KNN); accuracy alone is misleading."
         )
     for name, result in results.items():
         if result["metrics"]["f1"] >= 0.98 and result["metrics"]["accuracy"] >= 0.98:
@@ -247,6 +270,9 @@ def train_models(
 
     return {
         "features": features,
+        "train_index": X_train.index.tolist(),
+        "test_index": X_test.index.tolist(),
+        "grouped_split": bool(grouped),
         "models": models,
         "results": results,
         "cross_validation": cross_validation,
@@ -300,6 +326,14 @@ def score_students(frame: pd.DataFrame, trained: dict, model_name: str) -> pd.Se
         y = target.loc[known].astype(int)
         folds = int(max(2, min(5, y.value_counts().min())))
         splitter = StratifiedKFold(n_splits=folds, shuffle=True, random_state=RANDOM_STATE)
+        groups = student_groups(frame.loc[known])
+        if groups.duplicated().any():
+            folds = min(folds, groups.nunique())
+            if folds < 2:
+                return probability
+            splitter = list(StratifiedGroupKFold(n_splits=folds, shuffle=True, random_state=RANDOM_STATE).split(X.loc[known], y, groups))
+            if any(y.iloc[a].nunique() < 2 for a, b in splitter):
+                return probability
         pipeline = build_pipeline(clone(estimator), features)
         oof = cross_val_predict(pipeline, X.loc[known], y, cv=splitter, method="predict_proba")
         probability.loc[known] = oof[:, 1]
@@ -340,3 +374,22 @@ def explain_single(trained: dict, model_name: str, values: dict[str, float]) -> 
         "Contribution": contribution,
     })
     return table.reindex(table["Contribution"].abs().sort_values(ascending=False).index).reset_index(drop=True)
+
+
+def student_groups(frame):
+    """Missing identifiers remain independent; repeated IDs stay together."""
+    return pd.Series([f"id:{v}" if pd.notna(v) else f"missing:{i}" for i, v in frame["student_id"].items()], index=frame.index)
+
+
+def sensitivity_explanation(trained, model_name, values):
+    """One-at-a-time replacement by training medians, never a causal attribution."""
+    pipeline = trained["models"][model_name]
+    medians = pipeline.named_steps["preprocess"].named_transformers_["numeric"].named_steps["imputer"].statistics_
+    baseline = predict_single(trained, model_name, values)
+    rows = []
+    for feature, median in zip(trained["features"], medians):
+        replaced = dict(values, **{feature: float(median)})
+        rows.append({"Feature": feature, "Entered value": values.get(feature), "Training reference": median,
+                     "Score difference": baseline - predict_single(trained, model_name, replaced)})
+    result = pd.DataFrame(rows)
+    return result.loc[result["Score difference"].abs().sort_values(ascending=False).index]

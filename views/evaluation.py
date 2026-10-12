@@ -11,7 +11,7 @@ from views.common import chart, page_header, table
 
 def render(ctx) -> None:
     page_header(
-        "Model Evaluation",
+        "Model Comparison Lab",
         "Every number on this page is calculated from a held-out test set that the models "
         "did not see during training.",
     )
@@ -34,6 +34,7 @@ def render(ctx) -> None:
         help="Share of labelled records with a non-pass outcome (the class the model looks for).",
     )
 
+    st.caption("Models share identical held-out records. Repeated student IDs are kept together in the split and cross-validation. Model selection uses training cross-validation, never held-out F1. Sidebar filters do not change evaluation metrics.")
     st.subheader("Model comparison (test set)")
     summary = ev.metrics_table(trained)
     st.dataframe(
@@ -106,7 +107,7 @@ def render(ctx) -> None:
         f"stratified by outcome, random_state={trained['random_state']}.\n"
         "- **Pipeline:** median imputation, standard scaling, then the classifier, all fitted on "
         "training data only.\n"
-        "- **Imbalance:** `class_weight='balanced'` for both models."
+        "- **Imbalance:** balanced class weights for Logistic Regression, Decision Tree and Random Forest; KNN uses unweighted neighbours."
     )
 
     st.subheader("Limitations and warnings")

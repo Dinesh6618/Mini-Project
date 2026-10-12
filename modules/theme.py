@@ -40,22 +40,44 @@ DIVERGING = [[0.0, CORAL], [0.5, "#2a3a50"], [1.0, TEAL]]
 CSS = f"""
 <style>
 .stApp {{ background: {NAVY}; color: {INK}; }}
-[data-testid="stSidebar"] {{ background: {SURFACE}; border-right: 1px solid {BORDER}; }}
-[data-testid="stMetric"] {{
-    background: {SURFACE}; border: 1px solid {BORDER};
-    padding: 12px 16px; border-radius: 8px;
-}}
-[data-testid="stMetricLabel"] p {{ color: {INK_MUTED}; font-size: 0.85rem; }}
-[data-testid="stMetricValue"] {{ font-size: 1.6rem; }}
-div[data-testid="stAlert"] {{ border-radius: 8px; }}
-h1 {{ font-size: 1.7rem; margin-bottom: 0.2rem; }}
-h2, h3 {{ color: {INK}; }}
-.block-container {{ padding-top: 2rem; max-width: 1250px; }}
-.page-caption {{ color: {INK_MUTED}; margin: 0 0 1rem 0; }}
-.chart-note {{ color: {INK_MUTED}; font-size: 0.85rem; margin: -0.4rem 0 1rem 0; }}
-.risk-badge {{
-    display: inline-block; padding: 6px 14px; border-radius: 6px;
-    font-weight: 600; border: 1px solid {BORDER}; background: {SURFACE};
+[data-testid="stHeader"] {{ background: rgba(11,18,32,.92); }}
+[data-testid="stSidebar"] {{ background: #0f1929; border-right: 1px solid {BORDER}; }}
+[data-testid="stSidebar"] .block-container {{ padding-top: 1rem; }}
+[data-testid="stSidebar"] h1 {{ font-size: 1.35rem !important; letter-spacing: -.03em; }}
+[data-testid="stSidebar"] [role="radiogroup"] {{ gap: .12rem; }}
+[data-testid="stSidebar"] [role="radiogroup"] label {{ padding: .35rem .6rem; border-radius: 8px; transition: background .15s; }}
+[data-testid="stSidebar"] [role="radiogroup"] label:hover {{ background: #192a40; }}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) {{ background: #163c40; box-shadow: inset 3px 0 {TEAL}; }}
+[data-testid="stMetric"] {{ background: linear-gradient(135deg, #152338, {SURFACE}); border: 1px solid {BORDER}; padding: 19px 20px; border-radius: 14px; min-height: 118px; }}
+[data-testid="stMetricLabel"] p {{ color: {INK_MUTED}; font-size: .85rem; }}
+[data-testid="stMetricValue"] {{ font-size: clamp(1.5rem, 2.3vw, 2rem); font-weight: 650; letter-spacing: -.04em; }}
+[data-testid="stVerticalBlockBorderWrapper"] > div {{ border-radius: 14px !important; }}
+[data-testid="stAlert"] {{ border-radius: 12px; }}
+h1 {{ font-size: clamp(1.8rem, 3vw, 2.5rem) !important; letter-spacing: -.04em; line-height: 1.2 !important; padding-bottom: .5rem !important; }}
+h2 {{ font-size: 1.4rem !important; letter-spacing: -.02em; }}
+h3 {{ font-size: 1.05rem !important; letter-spacing: -.01em; }}
+.block-container {{ padding-top: 2rem; padding-bottom: 3rem; max-width: 1320px; }}
+.page-caption {{ color: {INK_MUTED}; line-height: 1.65; max-width: 850px; margin: 0 0 1.25rem; }}
+.eyebrow {{ color: #79d9cb; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .4rem; }}
+.context-bar {{ display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: 0 0 1.3rem; }}
+.context-pill {{ font-size: .76rem; color: {INK_MUTED}; background: {SURFACE}; border: 1px solid {BORDER}; border-radius: 99px; padding: .35rem .75rem; }}
+.context-pill.accent {{ color: #8de3d5; background: #103631; border-color: #24584e; }}
+.insight-panel {{ padding: 20px 24px; border-radius: 14px; border: 1px solid #2b4e55; background: linear-gradient(115deg, #10332f, #132238); margin: 1.25rem 0; }}
+.insight-panel h3 {{ margin: 0 0 .35rem; color: #c8f6ed; }}
+.insight-panel p {{ margin: 0; color: #bbd2d8; line-height: 1.65; }}
+.chart-note {{ color: {INK_MUTED}; font-size: .82rem; line-height: 1.6; margin: .3rem 0; }}
+[data-testid="stButton"] button, [data-testid="stDownloadButton"] button {{ min-height: 42px; border-radius: 9px; font-weight: 600; }}
+button:focus-visible, a:focus-visible {{ outline: 3px solid #79d9cb !important; outline-offset: 3px; }}
+[data-testid="stExpander"] {{ border-radius: 12px; }}
+[data-testid="stDataFrame"] {{ border-radius: 10px; overflow: hidden; }}
+[data-baseweb="tab-list"] {{ gap: 1.5rem; border-bottom: 1px solid {BORDER}; margin: 1rem 0; }}
+[data-baseweb="tab"] {{ padding: .75rem .15rem; font-weight: 600; }}
+.risk-badge {{ display: inline-block; padding: 6px 14px; border-radius: 6px; font-weight: 600; border: 1px solid {BORDER}; background: {SURFACE}; }}
+@media (max-width: 700px) {{
+ .block-container {{ padding: 3.8rem 1rem 2rem; }}
+ [data-testid="stMetric"] {{ min-height: 100px; padding: 14px; }}
+ .insight-panel {{ padding: 16px; }}
+ [data-baseweb="tab-list"] {{ gap: .7rem; }}
 }}
 </style>
 """

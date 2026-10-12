@@ -24,6 +24,7 @@ class AppContext:
     high: float
     indicators: dict = field(default_factory=dict)
     filters_active: bool = False
+    selected_filters: dict = field(default_factory=dict)
 
     @property
     def has_model(self) -> bool:

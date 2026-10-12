@@ -28,7 +28,7 @@ MODULES = pd.DataFrame([
     ("modules/data_loader.py", "Reads CSV files, standardises column names, validates structure, anonymises IDs."),
     ("modules/data_cleaning.py", "Type conversion, range checks, duplicates, label normalisation and the change log."),
     ("modules/exploratory_analysis.py", "Statistics, correlations, outliers and the Plotly charts."),
-    ("modules/prediction.py", "Pipelines, Logistic Regression and Decision Tree, evaluation, risk scoring."),
+    ("modules/prediction.py", "Four classifiers, student-separated evaluation, explanations and risk scoring."),
     ("modules/model_evaluation.py", "Metric tables, confusion matrix, importance charts, warnings."),
     ("modules/recommendations.py", "Rule-based, supportive suggestions."),
     ("modules/database.py", "Optional local SQLite storage."),
@@ -62,7 +62,7 @@ def render(ctx) -> None:
         "1. **Load and validate** a CSV (or the built-in synthetic sample).\n"
         "2. **Clean** it with every change recorded in a change log.\n"
         "3. **Explore** distributions, correlations, trends and outliers.\n"
-        "4. **Train** Logistic Regression and a Decision Tree on historical outcomes, with a "
+        "4. **Train** Logistic Regression, Decision Tree, Random Forest and KNN on historical outcomes, with a "
         "held-out test set, class weights and cross-validation.\n"
         "5. **Evaluate** honestly with precision, recall, F1 and a confusion matrix.\n"
         "6. **Estimate risk** for individual students, with adjustable thresholds and "
@@ -93,9 +93,9 @@ def render(ctx) -> None:
 
     st.subheader("Known limitations")
     st.markdown(
-        "- Only two baseline models are compared, with default-style settings.\n"
+        "- Four baseline models are compared, with fixed hyperparameters.\n"
         "- Results come from one train/test split; they will vary with different data.\n"
         "- Subject columns must end in `_marks` and use a 0-100 scale.\n"
-        "- No fairness audit across groups is performed.\n"
+        "- Group error audits need sufficient held-out students and cannot prove fairness.\n"
         "- Not intended for use on real students without institutional approval and review."
     )

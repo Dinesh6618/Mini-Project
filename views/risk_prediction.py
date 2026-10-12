@@ -66,9 +66,8 @@ def render(ctx) -> None:
         f"High Risk at {ctx.high:.0%} or above."
     )
     st.caption(
-        "The models give extra weight to the less common non-pass outcome so it is not ignored. "
-        "That makes the score a relative ranking rather than a calibrated chance of failing: "
-        "around 50% means the model sees the student as about equally like past passes and fails."
+        "Logistic Regression and tree models give extra weight to the less common non-pass outcome; KNN uses unweighted neighbours. "
+        "Scores are relative model estimates, not calibrated chances of failing. Associations do not establish causes. Entirely empty training features use zero imputation; other missing values use training medians."
     )
 
     st.subheader("Estimate for one student")
@@ -102,17 +101,8 @@ def render(ctx) -> None:
         else:
             st.error("High estimated risk. Consider offering additional academic support.")
 
-        explanation = explain_single(trained, model_name, values)
-        if explanation is not None:
-            st.markdown("**What pushed this estimate up or down**")
-            show = explanation.copy()
-            show["Feature"] = show["Feature"].map(pretty)
-            show["Effect"] = show["Contribution"].map(
-                lambda c: "raises estimate" if c > 0.05 else "lowers estimate" if c < -0.05 else "little effect"
-            )
-            show["Contribution"] = show["Contribution"].round(2)
-            table(show)
-            st.caption("Contribution = model coefficient x how far the value is from the typical student (log-odds).")
+        from views.simulator import show_explanation
+        show_explanation(ctx, values)
 
         tips = academic_recommendations(values, ctx.indicators)
         st.markdown("**Supportive suggestions**")

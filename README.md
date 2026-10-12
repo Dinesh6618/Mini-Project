@@ -1,6 +1,6 @@
 # Student Academic Performance Analysis and Early Risk Prediction
 
-A local Streamlit application that analyses student academic records, shows patterns, and uses two interpretable machine-learning models to estimate which students may benefit from extra academic support.
+A local Streamlit application that analyses student academic records, shows patterns, and uses four machine-learning models with transparent explanations to estimate which students may benefit from extra academic support.
 
 It is an **educational decision-support tool**. It does not label, rank or penalise students, and no estimate should ever be the only basis for an academic decision.
 
@@ -109,7 +109,7 @@ Regenerate it with `python data/generate_sample_data.py`.
 3. **Leakage prevention** - the target, student ID, name, and group labels (department, year, section) are never model inputs. Group labels are excluded to avoid proxy bias. Imputation and scaling live inside the pipeline, so they are fitted on training data only.
 4. **Split** - stratified 75% training / 25% held-out test, fixed `random_state`.
 5. **Pipeline** - median imputation, standard scaling, then the classifier.
-6. **Models** - Logistic Regression and a depth-limited Decision Tree, both with `class_weight="balanced"` to handle the minority class.
+6. **Models** - Logistic Regression, a depth-limited Decision Tree, Random Forest (100 trees, depth 6), and K-Nearest Neighbors (5 neighbors). Logistic Regression and trees use balanced class weights; KNN uses unweighted standardized neighbors. All candidates use the same split and training-only preprocessing.
 7. **Evaluation** - precision, recall and F1 for the non-pass class, accuracy, ROC AUC and the confusion matrix, all calculated on the held-out test set. The page also shows the accuracy of always predicting the most common outcome, because accuracy alone is misleading on imbalanced data.
 8. **Cross-validation** - stratified 5-fold on the training portion, only when enough records exist.
 9. **Refusal when unsuitable** - fewer than 40 labelled records, fewer than 8 examples of an outcome, or no `final_result` column: the app explains what is missing and shows indicator counts instead of a model. It never invents predictions.
@@ -166,10 +166,10 @@ Rule-based and visible: attendance below 75%, internal marks below 40, assignmen
 
 ## 10. Limitations
 
-- Only two baseline models are compared, with fixed hyper-parameters.
+- Four baseline models are compared, with fixed hyper-parameters; no tuning or probability calibration is performed.
 - Results come from a single train/test split and will vary with different data.
 - Subject columns must end in `_marks` and use a 0-100 scale.
-- No fairness audit across groups is performed.
+- Group error audits are available when sufficient held-out data exists; they do not prove fairness.
 - Academic records omit context such as health, circumstances and support received. Correlation is not causation.
 - Not intended for real students without institutional approval and human review.
 
@@ -181,3 +181,42 @@ Rule-based and visible: attendance below 75%, internal marks below 40, assignmen
 | Page keeps showing old results after editing code | Stop the server (Ctrl+C) and run `streamlit run app.py` again |
 | Port already in use | `streamlit run app.py --server.port 8502` |
 | Uploaded CSV rejected | Read the error message; it names the missing or empty column |
+
+
+## 12. Advanced demonstration pages
+
+The existing pages remain available. New navigation entries use the same source dataset, theme and filters.
+
+1. **What-If Simulator:** select a student record from the filtered selection, then move attendance, internal marks, assignment and previous-semester sliders (subject sliders appear when available). Each move recalculates the scenario immediately. Both baseline and scenario use the same fitted model; the baseline can differ from out-of-fold scores in Student Records. Missing baseline values use training medians. Estimates are not guaranteed outcomes or evidence that changing an indicator causes an outcome.
+2. **Explainable predictions:** Risk Prediction and the simulator show exact coefficient-times-standardized-value contributions for Logistic Regression. Other models show one-at-a-time score sensitivity to replacing an indicator with its training median. Sensitivities are not additive or causal. Global coefficients, tree impurity importance, or training-set permutation F1 importance are also available. Correlated features can distort interpretation.
+3. **Semester Progress Tracker:** upload **long-format history** with a positive integer `semester` column, one row per `student_id, semester`. Reuse the same student ID across semesters. All existing required columns are still required on each row; blank numeric cells are allowed when a column has some numeric data. Example layout:
+
+   ```csv
+   student_id,semester,attendance_percentage,internal_marks,assignment_score,previous_semester_marks,final_result
+   ```
+
+   Add your observed records beneath that header. The built-in sample has no semester history, so this page asks for it instead of inventing trends. Select a student and indicators to view observed improvements/declines. Ambiguous semester labels, missing IDs, and conflicting student-semester records require correction. Changes compare consecutive available semesters in the current filters; gaps are not interpolated. Anonymous IDs stay stable across a student's semesters.
+4. **Model Comparison Lab:** all four classifiers share the same held-out records; view precision, recall, F1, accuracy, ROC AUC, confusion matrices and training cross-validation. Repeated student IDs stay together in holdout, cross-validation and out-of-fold scoring, even without a semester column. Grouped evaluation requires at least eight distinct students associated with each outcome; it uses one feasible fold of a seeded four-fold stratified group split (approximately 25% test). Imputation and scaling are always learned inside each training fold. The sidebar model defaults to best **training cross-validation F1**, with Logistic Regression as fallback; the test set is never used to select a model. Metrics use full data and ignore descriptive sidebar filters. Features must have been recorded before the final result; chronology cannot be verified automatically.
+5. **Report Generator:** download a multi-page PDF with selected filters, dataset counts/statistics, charts, source-data quality calculation, held-out metrics for all four models, confusion matrices and limitations. PDF generation stays local using existing Matplotlib dependencies. PDFs contain aggregates rather than individual student identities. Download processed CSV for the filtered selection; it follows the anonymous-ID setting. Empty selections and unavailable labels still produce an explanatory report.
+6. **Data Quality Score:** assesses original loaded data before cleaning and ignores sidebar filters. Score = `100 * (1 - mean(missing-cell rate, invalid-cell rate, extra-duplicate-row rate, conflicting-record rate))`. Four checks have equal weights (25%); this is an explicitly chosen checklist, not an empirically validated quality or accuracy measure. Blank cells count as missing; invalid academic values and unknown nonblank outcome labels count as invalid. Conflict keys use student plus semester when available, otherwise student alone. Checks can overlap. The table gives issue counts, denominators and rates; Data Cleaning retains its detailed audit trail.
+7. **Class and Subject Comparison:** choose an academic grouping and available subject/core indicators. Interactive heatmaps display actual means; accompanying counts show how many nonmissing records support each cell. Subject columns must end in `_marks`. All sidebar filters apply. Means weight semester records; comparisons are descriptive rather than causal or student rankings.
+8. **Bias and Fairness Auditor:** evaluates full held-out predictions across available department, year or section groups, ignoring sidebar filters to avoid creating identifying slices. Sensitive attributes are not offered. Groups with fewer than **10 distinct held-out students** are suppressed, including names. False-positive / false-negative rates need 10 distinct students in the relevant actual-outcome denominator, otherwise they are unavailable. At least two eligible groups are needed for comparison. Missing group attributes are excluded. Counts and sample limitations accompany rates. Thresholds are a disclosure safeguard, not proof of statistical adequacy. Repeated semesters weight records; observed error gaps do not establish bias or fairness.
+
+No additional Python dependencies are required. Run from this project directory:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+python -m unittest discover -s tests -t .
+```
+
+Advanced tests cover live simulator recalculation, model explanations, student-separated splits, known semester changes, quality arithmetic, group aggregates, fairness suppression, PDF generation and navigation for incomplete datasets.
+
+
+## 13. Interface guide
+
+The overview opens with a compact dataset-status strip, four headline metrics and an academic-support summary. Use the three action cards to open student records, try a what-if scenario, or export a report. The walkthrough explains the demonstration flow; chart tabs separate performance, subject trends and support indicators.
+
+The sidebar keeps navigation visible and places controls in **Choose your data**, **Filter records**, and **Model & risk settings** panels. Source, anonymity and model availability remain visible in the status strip on every page. The simulator uses three numbered steps: choose a record, adjust indicators, compare estimates. Report downloads have separate PDF and CSV descriptions.
+
+The navy / teal theme uses consistent chart cards, readable spacing, text labels alongside risk colours, keyboard focus indicators, and layouts that adapt to narrow screens. Existing navigation routes and analytical calculations are preserved.

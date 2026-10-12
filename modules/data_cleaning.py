@@ -125,14 +125,14 @@ def clean_dataset(frame: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
     duplicate_ids = 0
     if ID_COLUMN in cleaned.columns:
         ids = cleaned[ID_COLUMN]
-        duplicate_ids = int(ids.notna().mul(ids.duplicated(keep=False)).sum())
+        duplicate_ids = int(ids.notna().mul(cleaned.duplicated(subset=[ID_COLUMN, "semester"] if "semester" in cleaned else [ID_COLUMN], keep=False)).sum())
     if duplicate_ids:
         operations.append(
-            f"Found {duplicate_ids} row(s) sharing a student_id with different values; "
+            f"Found {duplicate_ids} row(s) sharing a student key (ID plus semester when present) with different values; "
             "they were kept and need manual review."
         )
         warnings.append(
-            f"{duplicate_ids} row(s) share a student_id but differ in other columns. "
+            f"{duplicate_ids} row(s) share a student key (ID plus semester when present) but differ in other columns. "
             "They were NOT merged; check which record is correct."
         )
 

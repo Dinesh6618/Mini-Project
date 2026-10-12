@@ -114,12 +114,13 @@ def load_csv(source: str | Path | bytes | BinaryIO) -> pd.DataFrame:
 def anonymize_frame(frame: pd.DataFrame) -> pd.DataFrame:
     """Replace identifiers with neutral labels and drop student names.
 
-    Labels follow the row order of the prepared dataset, so they stay the same
-    when filters are applied. Use this before displaying or exporting data.
+    Labels follow first occurrence of each student in the prepared dataset,
+    remain consistent across semesters, and stay the same when filters apply. Use this before displaying or exporting data.
     """
     result = frame.copy()
     if ID_COLUMN in result.columns:
-        result[ID_COLUMN] = [f"ANON-{i + 1:04d}" for i in range(len(result))]
+        codes, _ = pd.factorize(result[ID_COLUMN], sort=False)
+        result[ID_COLUMN] = [f"ANON-{code + 1:04d}" if code >= 0 else f"UNKNOWN-{i + 1:04d}" for i, code in enumerate(codes)]
     if NAME_COLUMN in result.columns:
         result = result.drop(columns=NAME_COLUMN)
     return result
